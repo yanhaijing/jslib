@@ -4,7 +4,7 @@ var nodeResolve = require('@rollup/plugin-node-resolve');
 var commonjs = require('@rollup/plugin-commonjs');
 var terser = require('@rollup/plugin-terser');
 
-var common = require('./rollup.js');
+var common = require('./rollup.cjs');
 
 var prod = process.env.NODE_ENV === 'production';
 

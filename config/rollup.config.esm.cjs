@@ -1,6 +1,6 @@
 // rollup.config.js
 // ES output
-var common = require('./rollup.js');
+var common = require('./rollup.cjs');
 
 module.exports = {
   input: 'src/index.js',
