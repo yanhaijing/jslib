@@ -33,6 +33,8 @@ function getCompiler() {
       [
         '@babel/plugin-transform-runtime',
         {
+          corejs: 3,
+          versions: '^7.22.15',
           helpers: true,
           regenerator: false,
         },

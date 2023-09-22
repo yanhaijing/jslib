@@ -7,27 +7,27 @@
   "module": "dist/index.esm.js",
   "exports": {
     "node": {
-      "require": "./dist/index.js",
-      "default": "./dist/index.esm.js"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
     },
     "default": {
-      "require": "./dist/index.js",
-      "default": "./dist/index.esm.js"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
     }
   },
+  "types": "./types/index.d.ts",
   "scripts": {
     "preinstall": "npx only-allow npm",
     "clean": "rimraf ./dist",
     "start": "http-server -p 3000 -c-1",
     "test": "cross-env NODE_ENV=test nyc mocha",
     "release": "npm test && npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags",
-    "lint": "eslint -c .eslintrc.js 'src/**/*.js'",
-    "lint:fix": "eslint --fix -c .eslintrc.js 'src/**/*.js' --fix",
+    "lint": "eslint -c .eslintrc.cjs 'src/**/*.js'",
+    "lint:fix": "eslint --fix -c .eslintrc.cjs 'src/**/*.js' --fix",
     "build:self": "rollup -c config/rollup.config.cjs",
     "build:esm": "rollup -c config/rollup.config.esm.cjs",
     "build:aio": "rollup -c config/rollup.config.aio.cjs",
-    "build:aio.min": "cross-env NODE_ENV=production npm run build:aio",
-    "build": "npm run clean && npm run build:self && npm run build:esm && npm run build:aio && npm run build:aio.min",
+    "build": "npm run clean && npm run build:self && npm run build:esm && npm run build:aio",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "prepare": "husky install",
     "ci": "commit",
@@ -43,8 +43,8 @@
     "url": "https://github.com/yanhaijing/jslib/issues"
   },
   "files": [
-    "dist",
-    "*.d.ts"
+    "/dist",
+    "/types"
   ],
   "engines": {
     "node": ">=18.18.0 <19.0.0",
@@ -94,6 +94,6 @@
     "rollup": "^3.29.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.22.15"
+    "@babel/runtime-corejs3": "^7.22.15"
   }
 }
