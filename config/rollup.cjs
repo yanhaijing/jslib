@@ -59,13 +59,24 @@ exports.getCompilerTest = () => {
           targets: {
             browsers:
               'last 2 versions, > 1%, ie >= 11, Android >= 4.1, iOS >= 10.3',
+            node: '14',
           },
           modules: false,
-          useBuiltIns: 'entry',
-          corejs: 3,
+          loose: false,
         },
       ],
     ],
+    // plugins: [
+    //   [
+    //     '@babel/plugin-transform-runtime',
+    //     {
+    //       corejs: 3,
+    //       useESModules: true,
+    //     },
+    //   ],
+    // ],
+    // sourceType: 'unambiguous',
+    // babelHelpers: 'runtime',
     exclude: 'node_modules/**',
   });
 };
