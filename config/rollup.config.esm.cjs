@@ -22,6 +22,5 @@ module.exports = {
       // sourcemap: 'inline',
     },
   ],
-  // plugins: [common.getCompiler()],
-  plugins: [common.getCompilerTest()],
+  plugins: [common.getCompiler()],
 };

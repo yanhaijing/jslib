@@ -48,35 +48,3 @@ function getCompiler() {
 exports.name = 'jslib';
 exports.banner = banner;
 exports.getCompiler = getCompiler;
-
-exports.getCompilerTest = () => {
-  return babel({
-    babelrc: false,
-    presets: [
-      [
-        '@babel/preset-env',
-        {
-          targets: {
-            browsers:
-              'last 2 versions, > 1%, ie >= 11, Android >= 4.1, iOS >= 10.3',
-            node: '14',
-          },
-          modules: false,
-          loose: false,
-        },
-      ],
-    ],
-    // plugins: [
-    //   [
-    //     '@babel/plugin-transform-runtime',
-    //     {
-    //       corejs: 3,
-    //       useESModules: true,
-    //     },
-    //   ],
-    // ],
-    // sourceType: 'unambiguous',
-    // babelHelpers: 'runtime',
-    exclude: 'node_modules/**',
-  });
-};
