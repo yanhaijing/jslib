@@ -1,4 +1,4 @@
-name: Publish Stable Release
+name: Publish Release
 
 on:
   push:
