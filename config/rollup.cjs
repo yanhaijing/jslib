@@ -4,10 +4,11 @@ var pkg = require('../package.json');
 
 var version = pkg.version;
 
-var banner = `/*!
+var banner = 
+`/*!
  * ${pkg.name} ${version} (https://github.com/yanhaijing/jslib)
  * API https://github.com/yanhaijing/jslib/blob/master/doc/api.md
- * Copyright 2017-${new Date().getFullYear()} yanhaijing. All Rights Reserved
+ * Copyright 2017-${(new Date).getFullYear()} yanhaijing. All Rights Reserved
  * Licensed under MIT (https://github.com/yanhaijing/jslib/blob/master/LICENSE)
  */
 `;
