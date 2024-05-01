@@ -1,9 +1,9 @@
-name: Publish Pre-release
+name: Publish Stable Release
 
 on:
   push:
     tags:
-      - 'v*.*.*-*'
+      - 'v*.*.*'
 
 jobs:
   release:
@@ -31,7 +31,7 @@ jobs:
       - name: Build library
         run: npm run build
 
-      - name: Publish to npm (Pre-release)
+      - name: Publish to npm (Stable)
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --tag next
+        run: npm publish
